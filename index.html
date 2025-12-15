@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarit Samkumpim - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="bg-purple-800 p-4">
+      <div id="home" class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto ">
+        <div class="profile_name text-white text-xl md:text-2xl mb-4 md:mb-0">
+            <span>Sarit Samkumpim (Mos)</span>
+            <div class="contact_info flex flex-col md:flex-row items-start text-sm italic md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-2">
+              <div class="flex items-center">
+                <img src="images/gmail.png" alt="https://icons8.com/icon/124377/circled-envelope" class="w-6 h-6 mr-2"/>
+                <a href="mailto:saritsamkumpim@gmail.com" class="text-white hover:underline hover:font-bold">saritsamkumpim@gmail.com</a>
+              </div>
+              <div class="flex items-center">
+                <img src="images/github.png" alt="https://icons8.com/icon/124377/circled-envelope" class="w-6 h-6 mr-2"/>
+                <a href="https://github.com/mosetz" class="text-white hover:underline hover:font-bold">github.com/mosetz</a>
+              </div>
+            </div>
+            <div class="contact_info flex flex-col md:flex-row items-start text-sm italic md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-2">
+              <div class="flex items-center">
+                <img src="images/phone.png" alt="https://icons8.com/icon/124377/circled-envelope" class="h-6 w-6 mr-2"/>
+                <span>+66 091 739 2737</span>
+              </div>
+              <div class="flex items-center">
+                <img src="images/linkedin.png" alt="https://icons8.comundefined" class="h-6 w-6 mr-2"/>
+                <a href="https://www.linkedin.com/in/saritsamkumpim/" class="text-white hover:underline hover:font-bold" >linkedin.com/in/saritsamkumpim</a>
+              </div>
+            </div>
+        </div>
+        <div class="topdiv flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+            <a class="topmenu text-gray-300 hover:text-white text-xl hover:underline hover:font-bold" href="#about-me">About Me</a>
+            <a class="topmenu text-gray-300 hover:text-white text-xl hover:underline hover:font-bold" href="#skills">Skills</a>
+            <a class="topmenu text-gray-300 hover:text-white text-xl hover:underline hover:font-bold" href="#projects">Projects</a>
+            <a class="topmenu text-gray-300 hover:text-white text-xl hover:underline hover:font-bold" href="#recommendations">Recommendations</a>
+        </div>
+      </div>    
+    </nav>
+
+    <!-- About Me -->
+    <section id="about-me" class="container flex flex-col md:flex-row items-center justify-center p-8 max-w-6xl mx-auto">
+      <div class="mb-8 md:mb-0 md:mr-8">
+        <img src="images\IMG_4685.jpeg" class="profile_image block w-48 h-48 md:w-72 md:h-72 rounded-full object-cover flex-none max-w-none"/>
+      </div>
+
+      <div class="text-center md:text-left">
+          <h1 class="text-lg md:text-6xl font-bold text-purple-800 mb-4">
+            Hi, I'm Sarit Samkumpim!
+          </h1>
+          <br>
+          <p class="text-lg md:text-xl text-gray-600">
+            I'm Motivated and adaptable Software Engineer with a strong interest in front-end and full-stack development. I bring hands-on
+            experience with JavaScript, Java, PHP, HTML5, CSS3, and SQL, along with a solid foundation in software design,
+            analysis, and problem-solving.
+          </p>
+      </div>
+    </section>
+              
+    <!-- Skills -->
+    <section id="skills" class="p-8 mb-8">
+      <h2 class="text-3xl md:text-5xl font-bold text-start text-purple-800 mb-10">Skills</h2>
+
+      <div class="all_skills grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        <div class="skill bg-white border border-gray-300 rounded-lg p-4 text-center shadow-md hover:shadow-purple-800 transition-shadow flex flex-col items-center hover:border-purple-800 transition-colors">
+          <img src="images/html5.png" class="w-8 h-8 mb-2 mx-auto"/>
+          <h6 class="text-lg font-bold">HTML</h6>
+          <p class="text-sm text-gray-600">1 years experience</p>
+        </div>  
+
+        <div class="skill bg-white border border-gray-300 rounded-lg p-4 text-center shadow-md hover:shadow-purple-800 transition-shadow flex flex-col items-center hover:border-purple-800 transition-colors">
+          <img src="images/js.jpeg" class="h-8 w-8 mb-2 mx-auto"/>
+          <h6 class="text-lg font-bold">JavaScript</h6>
+          <p class="text-sm text-gray-600">6 month experience</p>
+        </div>
+
+        <div class="skill bg-white border border-gray-300 rounded-lg p-4 text-center shadow-md hover:shadow-purple-800 transition-shadow flex flex-col items-center hover:border-purple-800 transition-colors ">
+            <img src="images/CSS3.png" class="w-8 h-8 mb-2 mx-auto" alt="">
+            <h6 class="text-lg font-bold">CSS</h6>
+            <p class="text-sm text-gray-600">5 month experience</p>
+        </div>
+
+        <div class="skill bg-white border border-gray-300 rounded-lg p-4 text-center shadow-md hover:shadow-purple-800 transition-shadow flex flex-col items-center hover:border-purple-800 transition-colors">
+            <img src="images/java.png" class="w-8 h-8 mb-2 mx-auto" alt="">
+            <h6 class="text-lg font-bold">Java</h6>
+            <p class="text-sm text-gray-600">6 month experience</p>
+        </div>
+
+        <div class="skill bg-white border border-gray-300 rounded-lg p-4 text-center shadow-md hover:shadow-purple-800 transition-shadow flex flex-col items-center hover:border-purple-800 transition-colors">
+            <img src="images/react.png" class="w-8 h-8 mb-2 mx-auto" alt="">
+            <h6 class="text-lg font-bold">React</h6>
+            <p class="text-sm text-gray-600">2 month experience</p>
+        </div>
+
+      </div>
+    </section>
+          
+    <!-- Projects -->
+    <section class="projects p-8 mb-8" id="projects">
+      <h2 class="text-3xl md:text-5xl font-bold text-start text-purple-800 mb-8">
+        Projects
+      </h2>
+      <div id="projects-container" class="projects-container max-w-4xl mx-auto space-y-8">
+          <div class="project-card bg-white p-6 shadow-lg rounded-lg hover:shadow-purple-800 transition-shadow">
+            <h3 class="mb-4 font-bold text-2xl">Whondo</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>
+                    Built the front-end for a student rental platform using modular Web Components.
+                    Implemented reusable UI elements (comp-input, comp-button, comp-cookie) with scoped styling and
+                    Shadow DOM encapsulation. 
+                </li>
+            </br>
+                <li>
+                    Integrated the front-end with external API endpoints for authentication and
+                    email verification. Built features including dynamic form validation, password strength meter, drag-and
+                    drop image upload with preview, and fully responsive layouts. Collaborated using GitHub, followed
+                    modular code structure, and applied clean, maintainable coding practices.
+                </li>
+            </ul>
+          </div>
+          <hr>
+          <div class="project-card shadow-lg bg-white p-6 rounded-lg hover:shadow-purple-800 transition-shadow">
+            <h3 class="mb-4 font-bold text-2xl">Weather App</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>weather App allows users to fetch and display current weather data for any city using the OpenWeatherMap API. Which is a open source website the app provide details such as temperature, weather description, humidity, and wind speed etc.</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="project-card shadow-lg bg-white p-6 rounded-lg hover:shadow-purple-800 transition-shadow">
+            <h3 class="mb-4 font-bold text-2xl">Age Calculator</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li> Age-Calculator App allows user to calculate their ages compare with present date. Which if user enter the present date instead of their date of birth it will return that user have age of 0.</li>
+            </ul>
+          </div>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section id="recommendations" class="p-8">
+      <h2 class="text-3xl md:text-5xl text-purple-800 font-bold text-center mb-8">Recommendations</h2>
+      <div class="all_recommendations grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto" id="all_recommendations">
+        <!-- Recommendations will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- Recommendation Form -->
+    <section id="contact" class="p-8">
+      <div class="flex_center flex justify-center">
+        <fieldset class="w-full max-w-2xl p-6 border border-gray-300 rounded-lg bg-white shadow-md">
+          <legend class="introduction text-2xl md:text-3xl font-bold text-center text-purple-800 mb-4">Leave a Recommendation</legend>          
+          <input type="text" id="rec_name" placeholder="Name (Optional)" class="w-full p-2 mb-4 border border-gray-300 rounded"> <br/>
+          <textarea id="new_recommendation" cols="500" rows="10" style="resize: none;" placeholder="Message" class="w-full p-2 mb-4 border border-gray-300 rounded" ></textarea>
+          <div class="flex_center flex justify-center">
+            <button id="recommend_btn" onclick="addRecommendation()" class="bg-white border border-purple-800 text-purple-800 px-6 py-2 rounded hover:bg-purple-800 hover:text-white transition-colors">Submit</button>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+
+    <div class="iconbutton fixed bottom-4 right-4 w-12 h-12 bg-purple-800 rounded-full flex items-center justify-center cursor-pointer">
+      <a href="#home" class="text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </a>
+    </div>
+
+    <div  id="popup" class=" popup fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 bg-purple-200 border border-purple-300 rounded-lg text-center p-6 shadow-lg hidden">
+      <img src="images/checkmark--outline.svg" class="w-12 h-12 mx-auto mb-4"/> 
+      <h3 class="text-lg font-bold mb-4">Thanks for leaving a recommendation!</h3>
+      <button onclick="showPopup(false)" class="bg-white text-purple-800 border border-purple-800 rounded px-6 py-2 hover:bg-purple-800 hover:text-white transition-colors">Ok</button>
+    </div>
+  </body>
+</html>

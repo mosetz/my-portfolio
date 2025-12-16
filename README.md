@@ -40,8 +40,7 @@ This is a personal portfolio — contributions aren't expected. If you'd like to
 ## Contact
 
 - Email: saritsamkumpim@gmail.com
-- LinkedIn: linkedin.com/in/saritsamkumpim/
+- LinkedIn: https://www.linkedin.com/in/saritsamkumpim/
 
 ---
 
-Made with ❤️ — happy to help update this README with your specific details or a live demo link.

@@ -26,10 +26,9 @@ This project is a lightweight, responsive single-page portfolio built with plain
 - Modify styles in `style.css` for colors, spacing, and layout.
 - Edit `script.js` to change interactive behavior or add new features.
 
-## Live Demo
-This site is published and available online. Add your live site URL below so visitors can open it directly:
+## Live 
 
-- Live site: https://mosetz.github.io/my-portfolio/  <-- replace with your actual URL if different
+- Live site: https://mosetz.github.io/my-portfolio/  
 
 
 ## Contributing

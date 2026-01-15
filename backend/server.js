@@ -17,16 +17,12 @@ const allowedOrigins = [
  * Allow frontend to call this backend
  */
 app.use(cors({
-    origin: (origin, callback) => {
-        //Allowed request with no origin (Postman/curl/server-to-server)
-        if (!origin) return callback(null, true);
-
-        // Allow your GH-Pages origin + local dev
-        if (allowedOrigins.includes(origin)) return callback(null, true);
-
-        return callback(new Error("Not allowed by CORS"));
-    }
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ['content-type'],
 }));
+
+app.options("*", cors());
 
 /**
  * Prase JSON bodies (so req.body work)

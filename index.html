@@ -277,7 +277,19 @@
       </div>
     </section>
 
-    
+    <!-- Recommendation Form -->
+    <section id="contact" class="p-8">
+      <div class="flex_center flex justify-center">
+        <fieldset class="w-full max-w-2xl p-6 border border-gray-300 rounded-lg bg-white shadow-md">
+          <legend class="introduction text-2xl md:text-3xl font-bold text-center text-blue-800 mb-4">Leave a Recommendation</legend>          
+          <input type="text" id="rec_name" placeholder="Name (Optional)" class="w-full p-2 mb-4 border border-gray-300 rounded"> <br/>
+          <textarea id="new_recommendation" cols="500" rows="10" style="resize: none;" placeholder="Your Recommendation" class="w-full p-2 mb-4 border border-gray-300 rounded" ></textarea>
+          <div class="flex_center flex justify-center">
+            <button id="recommend_btn" onclick="addRecommendation()" class="bg-white border border-blue-800 text-blue-800 px-6 py-2 rounded hover:bg-blue-800 hover:text-white transition-colors">Submit</button>
+          </div>
+        </fieldset>
+      </div>
+    </section>
 
     <div class="iconbutton fixed bottom-4 right-4 w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center cursor-pointer">
       <a href="#home" class="text-white">

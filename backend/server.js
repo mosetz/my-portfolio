@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-    "https://mosetz.github.io/my-portfolio/",
+    "https://mosetz.github.io",
     "http://localhost:5500",
     "http://127.0.0.1:5500",
 ]

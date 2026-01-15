@@ -8,7 +8,7 @@ submitForm.addEventListener("submit", async (e) => {
     const message = document.querySelector("#message").value;
 
     try{
-        const res = await fetch("https://portfolio-contact-api-64q0.onrender.com", {
+        const res = await fetch("https://portfolio-contact-api-64q0.onrender.com/api/contact", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({name, email, message}),

@@ -22,7 +22,7 @@ app.use(cors({
     allowedHeaders: ['content-type'],
 }));
 
-app.options("/*", cors());
+app.options("/.*/", cors());
 
 /**
  * Prase JSON bodies (so req.body work)

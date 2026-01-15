@@ -17,12 +17,14 @@ const allowedOrigins = [
  * Allow frontend to call this backend
  */
 app.use(cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ['content-type'],
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error("CORS blocked"));
+  },
 }));
 
-app.options("/.*/", cors());
+app.options('/.*/', cors());
 
 /**
  * Prase JSON bodies (so req.body work)

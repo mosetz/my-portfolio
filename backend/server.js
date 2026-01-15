@@ -7,10 +7,26 @@ dotenv.config();
 
 const app = express();
 
+const allowedOrigins = [
+    "https://mosetz.github.io/my-portfolio/",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+]
+
 /**
  * Allow frontend to call this backend
  */
-app.use(cors());
+app.use(cors({
+    origin: (origin, callback) => {
+        //Allowed request with no origin (Postman/curl/server-to-server)
+        if (!origin) return callback(null, true);
+
+        // Allow your GH-Pages origin + local dev
+        if (allowedOrigins.includes(origin)) return callback(null, true);
+
+        return callback(new Error("Not allowed by CORS"));
+    }
+}));
 
 /**
  * Prase JSON bodies (so req.body work)

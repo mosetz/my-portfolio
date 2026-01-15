@@ -6,7 +6,8 @@
     <title>Sarit Samkumpim - Portfolio</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./output.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+    <script src="./submit.js" defer></script>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -253,12 +254,12 @@
       <div class="flex justify-center">
         <fieldset class="flex flex-col border rounded-lg w-full max-w-2xl border-gray-300 bg-white shadow-md p-6">
           <legend class="text-center font-bold text-2xl md:text-3xl text-blue-800 mb-4">Let's Connect</legend>
-          <form action="">
+          <form id="connect_form" action="">
             <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded mb-4" placeholder="Your Name">
             <input type="text" id="email" name="email" class="w-full border p-2 mb-4 border-gray-300 rounded" placeholder="Your Email" />
             <textarea id="message" name="message" placeholder="Your Message" cols="500" rows="10" style="resize: none;" class="border w-full rounded p-2 mb-4 border-gray-300"></textarea>
             <div class="flex justify-center">
-              <button type="submit"
+              <button type="submit" id="submit_btn"
                 class="bg-white border border-blue-800 rounded px-6 py-2 text-blue-800 hover:bg-blue-800 hover:text-white transition-colors"
                 onclick=""
               >

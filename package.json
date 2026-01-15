@@ -1,12 +1,5 @@
 {
   "name": "my-portfolio",
   "version": "1.0.0",
-  "homepage": "https://mosetz.github.io/my-portfolio/",
-  "description": "My Portfolio",
-  "scripts": {
-    "deploy": "gh-pages -d ."
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.0"
-  }
+  "description": "My Portfolio"
 }

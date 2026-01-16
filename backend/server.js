@@ -1,9 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 dotenv.config();
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 const app = express();
 
@@ -48,34 +49,27 @@ app.post("/api/contact", async (req, res) => {
         }
 
         //step2 Create transporter (Gmail)
-        const transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_APP_PASSWORD,
-            },
-        });
-
-        // step3 Email to me
-        const mailToYou = {
-            from: process.env.EMAIL_USER,
+       await resend.emails.send({
+            from: "Portfolio Contact <onboarding@resend.dev>",
             to: process.env.EMAIL_TO,
             subject: `New contact form message from ${name}`,
             replyTo: email,
             text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`,
-        };
+       });
 
-        //step 4 Email to user
-        const mailToUser = {
-            from: process.env.EMAIL_USER,
+        // step3 Email to me
+       await resend.emails.send({
+            from: "Mos <onboarding@resend.dev>",
             to: email,
             subject: "Thanks for contacting me!",
-            text: `Hi ${name}, \n\nThanks for reaching out - I received your message and will get back to you soon. \n\nYour message:\n"${message}"\n\nBest regards, \nSarit Samkumpim`,
-        };
-
-        await transporter.sendMail(mailToYou);
-        await transporter.sendMail(mailToUser);
-
+            text:
+                `Hi ${name},\n\n` +
+                `Thanks for reaching out — I received your message and will get back to you soon.\n\n` +
+                `Your message:\n"${message}"\n\n` +
+                `Best regards,\nSarit Samkumpim`,
+       });
+        
+    
         return res.json({ok: true, message: "Email sent successfully"});
     }catch (err) {
         console.error(err);

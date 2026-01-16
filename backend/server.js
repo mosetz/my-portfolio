@@ -17,14 +17,9 @@ const allowedOrigins = [
  * Allow frontend to call this backend
  */
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-    return callback(new Error("CORS blocked"));
-  },
+    origin: allowedOrigins
 }));
 
-app.options('/.*/', cors());
 
 /**
  * Prase JSON bodies (so req.body work)

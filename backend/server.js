@@ -76,7 +76,7 @@ app.post("/api/contact", async (req, res) => {
 
        if (toUser.error) {
             console.error("Resend toUser error:", toUser.error);
-            return res.status(500).json({ ok: true, message: "Sent to owner. Confirmation email failed." });
+            return res.status(200).json({ ok: true, message: "Message received. Confirmation email unavailable." });
        }
         
     

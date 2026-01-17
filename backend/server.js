@@ -48,8 +48,8 @@ app.post("/api/contact", async (req, res) => {
             return res.status(400).json({ok: false, error: "Invalid email."});
         }
 
-        //step2 Create transporter (Gmail)
-       await resend.emails.send({
+        //step2 email to me
+       const toYou = await resend.emails.send({
             from: "Portfolio Contact <onboarding@resend.dev>",
             to: process.env.EMAIL_TO,
             subject: `New contact form message from ${name}`,
@@ -57,8 +57,13 @@ app.post("/api/contact", async (req, res) => {
             text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`,
        });
 
-        // step3 Email to me
-       await resend.emails.send({
+       if (toYou.error){
+            console.error("Resend toYou error:", toYou.error);
+            return res.status(500).json({ok: false, error: "Failed to send message to owner." })
+       }
+
+        // step3 Email to user (confirmation)
+       const toUser = await resend.emails.send({
             from: "Mos <onboarding@resend.dev>",
             to: email,
             subject: "Thanks for contacting me!",
@@ -68,6 +73,11 @@ app.post("/api/contact", async (req, res) => {
                 `Your message:\n"${message}"\n\n` +
                 `Best regards,\nSarit Samkumpim`,
        });
+
+       if (toUser) {
+            console.error("Resend toUser error:", toUser.error);
+            return res.status(500).json({ ok: true, message: "Sent to owner. Confirmation email failed." });
+       }
         
     
         return res.json({ok: true, message: "Email sent successfully"});

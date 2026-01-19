@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { Resend } from 'resend';
+import pool from './db.js'
 
 dotenv.config();
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -26,6 +27,10 @@ app.use(cors({
  * Prase JSON bodies (so req.body work)
  */
 app.use(express.json());
+
+pool.query('SELECT NOW()')
+    .then(res => console.log('DB connected at:', res.rows[0].now))
+    .catch(err => console.error('DB connected error', err));
 
 // Health check route (quick test)
 app.get("/", (req, res) => {

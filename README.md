@@ -20,6 +20,7 @@ This project is a lightweight, responsive single-page portfolio built with plain
 - CSS
 - Tailwind CSS
 - JavaScript
+- Express.js
 
 
 - Update content in `index.html` to add or change sections.

@@ -46,8 +46,8 @@ app.get("/api/recommendations", async (req, res) => {
             LIMIT 20`
         );
         return res.json({ok:true, data: result.rows});
-    }catch {
-        console.err("GET /api/recommendations error:", err);
+    }catch (err){
+        console.error("GET /api/recommendations error:", err);
         return res.status(500).json({ok:false, error: "server error"});
     }
 });
@@ -78,7 +78,7 @@ app.post("/api/recommendations", async (req, res) => {
 
         return res.status(201).json({ok: true, data: insertResult.rows[0]});
 
-    } catch {
+    } catch (err) {
         console.error("POST /api/recommendations error:", err);
         return res.status(500).json({ok: false, error: "Server error"})
     }

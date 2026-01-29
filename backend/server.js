@@ -19,7 +19,9 @@ const allowedOrigins = [
  * Allow frontend to call this backend
  */
 app.use(cors({
-    origin: allowedOrigins
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
 }));
 
 
@@ -28,13 +30,58 @@ app.use(cors({
  */
 app.use(express.json());
 
-pool.query('SELECT NOW()')
-    .then(res => console.log('DB connected at:', res.rows[0].now))
-    .catch(err => console.error('DB connected error', err));
 
 // Health check route (quick test)
 app.get("/", (req, res) => {
     res.send("Contact API is running");
+});
+
+//get table info from db
+app.get("/api/recommendations", async (req, res) => {
+    try {
+        const result = await pool.query(
+            `SELECT id, name, message, created_at
+            FROM public.recommendations
+            ORDER BY created_at DESC
+            LIMIT 20`
+        );
+        return res.json({ok:true, data: result.rows});
+    }catch {
+        console.err("GET /api/recommendations error:", err);
+        return res.status(500).json({ok:false, error: "server error"});
+    }
+});
+
+app.post("/api/recommendations", async (req, res) => {
+    try {
+        
+        const {name, message} = req.body;
+        
+        //simple validation 
+        if (!name || !message.trim().length === 0) {
+            return res.status(400).json({ok: false, error: "Message is required"});
+        }
+
+        //limit message length to prevent spam / huge payload
+        if (message.length > 500) {
+            return res.status(400).json({ok: false, error: "Message too long (max 500)"});
+        }
+
+        const safeName = name && name.trim().length > 0 ? name.trim() : null;
+
+        const insertResult = await pool.query (
+            `INSERT INTO public.recommendations (name, message)
+            VALUES ($1, $2)
+            RETURNING id, name, message, created_at`,
+            [safeName, message]
+        );
+
+        return res.status(201).json({ok: true, data: insertResult.rows[0]});
+
+    } catch {
+        console.error("POST /api/recommendations error:", err);
+        return res.status(500).json({ok: false, error: "Server error"})
+    }
 });
 
 app.post("/api/contact", async (req, res) => {

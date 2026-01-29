@@ -58,7 +58,7 @@ app.post("/api/recommendations", async (req, res) => {
         const {name, message} = req.body;
         
         //simple validation 
-        if (!name || !message.trim().length === 0) {
+        if (!message.trim().length === 0) {
             return res.status(400).json({ok: false, error: "Message is required"});
         }
 

@@ -48,7 +48,7 @@ app.get("/api/recommendations", async (req, res) => {
         return res.json({ok:true, data: result.rows});
     }catch (err){
         console.error("GET /api/recommendations error:", err);
-        return res.status(500).json({ok:false, error: "server error"});
+        return res.status(500).json({ok:false, error: err.message});
     }
 });
 
@@ -58,7 +58,7 @@ app.post("/api/recommendations", async (req, res) => {
         const {name, message} = req.body;
         
         //simple validation 
-        if (!message.trim().length === 0) {
+        if (!message || !message.trim().length === 0) {
             return res.status(400).json({ok: false, error: "Message is required"});
         }
 
@@ -80,7 +80,7 @@ app.post("/api/recommendations", async (req, res) => {
 
     } catch (err) {
         console.error("POST /api/recommendations error:", err);
-        return res.status(500).json({ok: false, error: "Server error"})
+        return res.status(500).json({ok: false, error: err.message})
     }
 });
 
